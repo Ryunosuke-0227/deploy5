@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>skywayを利用した複数人チャット改良版</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">改良版</h1>
+      <p class="note">
+        ルームモードのチェンジ:
+        <a href="#">mesh</a> / <a href="#sfu">sfu</a>
+      </p>
+      <div class="room">
+        <div>
+          <video id="js-local-stream"></video>
+          <span id="js-room-mode"></span>:
+          <input type="text" placeholder="部屋名を入力" id="js-room-id">
+          <button id="js-join-trigger">参加</button>
+          <button id="js-leave-trigger">離脱</button>
+        </div>
+
+        <div class="remote-streams" id="js-remote-streams"></div>
+
+        <div>
+          <pre class="messages" id="js-messages"></pre>
+          <input type="text" id="js-local-text">
+          <button id="js-send-trigger">送信</button>
+        </div>
+        <div class="toggle-mute">
+          <button id="js-toggle-camera">カメラを閉じる</button>
+          <span id="camera-status"></span>
+          <br>
+        
+          <button id="js-toggle-microphone">音声を消す</button>
+          <span id="microphone-status"></span>
+          <br>
+        </div>
+      </div>
+      <p class="meta" id="js-meta"></p>
+    </div>
+    <script src="//cdn.webrtc.ecl.ntt.com/skyway-4.4.4.js"></script>
+    <script src="key.js"></script>
+    <script src="room.js"></script>
+  </body>
+</html>
